@@ -1,5 +1,9 @@
 module ImaginePlots
 
-# package code goes here
+using ImagineInterface
+using AxisArrays, Plots, UnitfulPlots
+import Plots: plot
+
+include("plot.jl")
 
 end # module
