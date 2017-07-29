@@ -5,7 +5,7 @@ plotlyjs()
 get_times{T}(v::AxisArray{T}) = axisvalues(v[Axis{:time}])[1]
 
 #This version plots groups in separate windows
-#function plot(coms::Vector{ImagineCommand}; sampmap=:world)
+#function plot(coms::Vector{ImagineSignal}; sampmap=:world)
 #    used_idxs = find(x->length(x) > 0, coms)
 #    used_coms = coms[used_idxs]
 #    nsamps = length(used_coms[1])
@@ -17,9 +17,9 @@ get_times{T}(v::AxisArray{T}) = axisvalues(v[Axis{:time}])[1]
 #        if ncoms == 0
 #            continue
 #        end
-#        times = [get_times(decompress(comgroup[1]))...]
+#        times = [get_times(get_samples(comgroup[1]))...]
 #        for i = 1:ncoms
-#            cursamps = decompress(comgroup[i])
+#            cursamps = get_samples(comgroup[i])
 #            if eltype(cursamps) == Bool #work around another plotting bug
 #                cursamps = map(UInt8, cursamps)
 #            end
@@ -33,7 +33,7 @@ get_times{T}(v::AxisArray{T}) = axisvalues(v[Axis{:time}])[1]
 #end
 
 #This plots all signals in a single plot via subplots
-function plot(coms::Vector{ImagineCommand}; sampmap=:world)
+function plot(coms::Vector{ImagineSignal}; sampmap=:world)
     used_idxs = find(x->length(x) > 0, coms)
     used_coms = coms[used_idxs]
     nsamps = length(used_coms[1])
@@ -48,9 +48,9 @@ function plot(coms::Vector{ImagineCommand}; sampmap=:world)
         if ncoms == 0
             continue
         end
-        times = [get_times(decompress(comgroup[1]))...]
+        times = [get_times(get_samples(comgroup[1]))...]
         for i = 1:ncoms
-            cursamps = decompress(comgroup[i])
+            cursamps = get_samples(comgroup[i])
             if eltype(cursamps) == Bool #work around another plotting bug
                 cursamps = map(UInt8, cursamps)
             end
@@ -59,7 +59,7 @@ function plot(coms::Vector{ImagineCommand}; sampmap=:world)
             ct+=1
         end
     end
-    xts = Array(Any, 1, nuc)
+    xts = Array{Any}(1, nuc)
     hts = fill(0.1, nuc)
     fill!(xts, nothing)
     xts[end] = :auto
@@ -69,8 +69,8 @@ function plot(coms::Vector{ImagineCommand}; sampmap=:world)
     return output
 end
 
-function plot(com::ImagineCommand; sampmap=:world)
-    samps = decompress(com)
+function plot(com::ImagineSignal; sampmap=:world)
+    samps = get_samples(com)
     times = get_times(samps)
     if eltype(samps) == Bool #work around another plotting bug
         samps = map(UInt8, samps)
