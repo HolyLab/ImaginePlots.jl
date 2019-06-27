@@ -1,5 +1,12 @@
+using Pkg
 using ImaginePlots
-using Base.Test
+using ImagineInterface, Unitful, Plots
+using Test
 
-# write your own tests here
-@test 1 == 2
+pyplot()
+
+sigs = rigtemplate("ocpi-2")
+p = getpositioners(sigs)[1]
+append!(p, "test", Unitful.V*rand(100))
+@test_nowarn plot(p)
+@test_nowarn plot([p;p])
