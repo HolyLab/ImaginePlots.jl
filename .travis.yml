@@ -24,7 +24,9 @@ addons:
       - gfortran
       - pkg-config
       - hdf5-tools
-
+env:
+    global:
+        - PYTHON=""
 ## uncomment the following lines to override the default test script
 script:
   - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
