@@ -37,7 +37,7 @@ function plot(coms::Vector{ImagineSignal{T}}; sampmap=:world) where {T}
     plts = []
     nuc = length(used_coms)
     ct = 1
-    clrs = Colors.distinguishable_colors(nuc)
+    clrs = Colors.distinguishable_colors(nuc+1, colorant"white")[2:end]
     for (comgroup, groupname) in zip((getpositioners(used_coms), getcameras(used_coms), getlasers(used_coms), getstimuli(used_coms)), ("Positioners","Cameras", "Lasers", "Stimuli"))  #assumes each as the same world units within-group
         ncoms = length(comgroup)
         if ncoms == 0
