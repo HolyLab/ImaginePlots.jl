@@ -36,9 +36,8 @@ jobs:
             ${{ runner.os }}-
       - name: Add HolyLabRegistry
         run: julia -e 'using Pkg; pkg"registry add General https://github.com/HolyLab/HolyLabRegistry.git"'
-      - name: Build a package
-        run: julia -e 'using Pkg; Pkg.instantiate(); Pkg.build()'
-      - uses: julia-actions/julia-runtest@v1
+      - name: Build and test a package
+        run: julia -e 'using Pkg; Pkg.instantiate(); Pkg.build(); Pkg.test()'
       - uses: julia-actions/julia-processcoverage@v1
       - uses: codecov/codecov-action@v1
         with:
