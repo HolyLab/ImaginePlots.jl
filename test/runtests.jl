@@ -1,4 +1,3 @@
-using Pkg
 using ImaginePlots
 using ImagineInterface, Unitful, Plots
 using Test
