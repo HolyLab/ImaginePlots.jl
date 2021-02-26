@@ -1,18 +1,29 @@
 name = "ImaginePlots"
 uuid = "d076106b-79cb-5c5e-aa42-567a067496c5"
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 AxisArrays = "39de3d68-74b9-583c-8d2d-e117c070f3a9"
 ImagineInterface = "a9d8408c-0fb1-11e9-0067-cb067474114e"
 Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
-UnitfulPlots = "2a06ce6d-1589-592b-9c33-f37faeaed826"
+Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
+UnitfulRecipes = "42071c24-d89e-48dd-8a24-8a12d9b8861f"
+
+[compat]
+AxisArrays = "0.3"
+ImagineInterface = "0.1"
+Plots = "1"
+Unitful = "1"
+UnitfulRecipes = "1"
+julia = "1.2"
 
 [extras]
 Conda = "8f4d0f93-b110-5947-807f-2305c1781a2d"
+ImagineInterface = "a9d8408c-0fb1-11e9-0067-cb067474114e"
+Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
 PyPlot = "d330b81b-6aea-500a-939a-2ce795aea3ee"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
 
 [targets]
-test = ["Test", "Conda", "PyPlot", "Unitful"]
+test = ["Test", "ImagineInterface", "Plots", "Conda", "PyPlot", "Unitful"]
