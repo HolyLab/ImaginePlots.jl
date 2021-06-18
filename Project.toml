@@ -10,7 +10,7 @@ Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
 UnitfulRecipes = "42071c24-d89e-48dd-8a24-8a12d9b8861f"
 
 [compat]
-AxisArrays = "0.3"
+AxisArrays = "0.3, 0.4"
 ImagineInterface = "0.1"
 Plots = "1"
 Unitful = "1"

@@ -29,7 +29,7 @@ get_times(v::AxisArray{T}) where {T} = axisvalues(v[Axis{:time}])[1]
 #end
 
 #This plots all signals in a single plot via subplots
-function plot(coms::Vector{ImagineSignal{T}}; sampmap=:world) where {T}
+function plot(coms::Vector{T}; sampmap=:world) where T<:ImagineSignal
     used_idxs = findall(x->length(x) > 0, coms)
     used_coms = coms[used_idxs]
     nsamps = length(used_coms[1])
