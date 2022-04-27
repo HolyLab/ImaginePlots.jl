@@ -1,6 +1,6 @@
 name = "ImaginePlots"
 uuid = "d076106b-79cb-5c5e-aa42-567a067496c5"
-version = "0.1.1"
+version = "0.2.0"
 
 [deps]
 AxisArrays = "39de3d68-74b9-583c-8d2d-e117c070f3a9"
@@ -15,7 +15,7 @@ ImagineInterface = "0.1"
 Plots = "1"
 Unitful = "1"
 UnitfulRecipes = "1"
-julia = "1.2"
+julia = "1.6"
 
 [extras]
 Conda = "8f4d0f93-b110-5947-807f-2305c1781a2d"
