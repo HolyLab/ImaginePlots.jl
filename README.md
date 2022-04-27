@@ -1,7 +1,5 @@
 # ImaginePlots
-[![Build Status](https://travis-ci.com/HolyLab/ImaginePlots.jl.svg?branch=master)](https://travis-ci.org/HolyLab/ImaginePlots)
-[![Build status](https://ci.appveyor.com/api/projects/status/28014huexv93dr69/branch/master?svg=true)](https://ci.appveyor.com/project/Cody-G/imagineplots-jl/branch/master)
-[![codecov](https://codecov.io/gh/HolyLab/ImaginePlots.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/HolyLab/ImaginePlots.jl)
+[![CI](https://github.com/HolyLab/ImaginePlots.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/HolyLab/ImaginePlots.jl/actions/workflows/CI.yml)[![codecov](https://codecov.io/gh/HolyLab/ImaginePlots.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/HolyLab/ImaginePlots.jl)
 
 Plotting of `ImagineSignal` objects from the [ImagineInterface.jl](https://github.com/HolyLab/ImagineInterface) package.
 
